@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="w01fb0ss">
+  <meta name="description" content="w01fb0ss 的个人博客">
+  <meta name="keywords" content="blog, KMS, Hugo, GNU/Linux, Linux">
+  
+  <link rel="prev" href="https://zgdd.github.io/2019/001/" />
+  <link rel="next" href="https://zgdd.github.io/2019/002/" />
+  <link rel="canonical" href="https://zgdd.github.io/2019/000/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Jumpserver OAuth2 | zgdd`s blog
+       
+  </title>
+  <meta name="title" content="Jumpserver OAuth2 | zgdd`s blog">
+    
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/zgdd.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Jumpserver OAuth2",
+    "headline" : "Jumpserver OAuth2",
+    "description" : "链接 改版Jumpserver 首先新建backup oidc_rp 文件结果如下： oidc_rp ├── __init__.py ├── backends.py ├── middleware.py ├── models.py ├── signals.py ├── urls.py └── views.py 下面是每个文件的具",
+    "inLanguage" : "zh-cn",
+    "author" : "w01fb0ss",
+    "creator" : "w01fb0ss",
+    "publisher": "w01fb0ss",
+    "accountablePerson" : "w01fb0ss",
+    "copyrightHolder" : "w01fb0ss",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-12-25 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2019-12-25 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/zgdd.github.io\/2019\/000\/",
+    "wordCount" : "862",
+    "keywords" : [ "跳板机","二次开发","python", "zgdd`s blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    
+        <div class="top-scroll-bar"></div>
+    
+    <div class="container">
+        <div class="navbar-header header-logo">
+            
+            <span class="logo_mark" >></span>
+            <a href="https://zgdd.github.io">
+                <span class="logo_text" >$ cd /home/ </span>
+                <span class="logo_cursor" ></span>
+            </a>
+            
+        </div>
+        <div class="navbar-right">
+                
+                <span class="menu">
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="w01fb0ss">w01fb0ss</a>
+                
+                </span>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     
+         <div class="top-scroll-bar"></div>
+     
+     <div class="container">
+        <div class="navbar-header">
+            <div class="header-logo">
+                
+                    <span class="logo_mark">></span>
+                    <a href="https://zgdd.github.io">
+                        <span class="logo_text">$ cd /home/ </span>
+                        <span class="logo_cursor"></span>
+                </a>
+                
+            </div>
+            <div class="navbar-right">
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+                <div class="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="w01fb0ss">w01fb0ss</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Jumpserver OAuth2</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://zgdd.github.io" rel="author">w01fb0ss</a> with ♥
+                <span class="post-time">
+                on <time datetime=2019-12-25 itemprop="datePublished">December 25, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://zgdd.github.io/categories/python/"> python </a>
+                        <a href="https://zgdd.github.io/categories/%E5%BC%80%E5%8F%91/"> 开发 </a>
+                        
+                </span>
+                <span class="post-word-count">, 862 words</span>
+        </div>
+    </header>
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#链接">链接</a></li>
+    <li><a href="#首先新建backup-oidc_rp">首先新建backup oidc_rp</a>
+      <ul>
+        <li><a href="#__init__py"><code>__init__.py</code></a></li>
+        <li><a href="#backendspy"><code>backends.py</code></a></li>
+        <li><a href="#signalspy"><code>signals.py</code></a></li>
+        <li><a href="#urlspy"><code>urls.py</code></a></li>
+        <li><a href="#viewspy"><code>views.py</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#其他需要修改的文件">其他需要修改的文件</a>
+      <ul>
+        <li><a href="#jumpserverappsauthenticationsignals_handlerspy"><code>jumpserver/apps/authentication/signals_handlers.py</code></a></li>
+        <li><a href="#jumpserverappsjumpserversettingspy"><code>jumpserver/apps/jumpserver/settings.py</code></a></li>
+        <li><a href="#jumpserverconfig_exampleyml"><code>jumpserver/config_example.yml</code></a></li>
+        <li><a href="#jumpserverappsauthenticationurlsview_urlspy"><code>jumpserver/apps/authentication/urls/view_urls.py</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#最后执行">最后执行</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script>
+
+    <div class="post-content">
+        
+
+        
+
+        
+        
+
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="链接">链接</h2>
+<p><a href="https://github.com/w01fb0ss/jumpserver">改版Jumpserver</a></p>
+<h2 id="首先新建backup-oidc_rp">首先新建backup oidc_rp</h2>
+<p>文件结果如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">oidc_rp
+├── __init__.py
+├── backends.py
+├── middleware.py
+├── models.py
+├── signals.py
+├── urls.py
+└── views.py
+</code></pre></div><p>下面是每个文件的具体内容</p>
+<h3 id="__init__py"><code>__init__.py</code></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+
+<span style="color:#f92672">from</span> .backends <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">from</span> .middleware <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">from</span> .utils <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</code></pre></div><h3 id="backendspy"><code>backends.py</code></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+
+<span style="color:#f92672">from</span> django.contrib.auth.backends <span style="color:#f92672">import</span> ModelBackend
+<span style="color:#f92672">from</span> django.conf <span style="color:#f92672">import</span> settings
+<span style="color:#f92672">import</span> requests
+<span style="color:#f92672">from</span> django.utils.http <span style="color:#f92672">import</span> urlencode
+<span style="color:#f92672">from</span> .models <span style="color:#f92672">import</span> OIDCUser
+<span style="color:#f92672">from</span> django.utils.encoding <span style="color:#f92672">import</span> force_bytes, smart_text
+<span style="color:#f92672">from</span> common.utils <span style="color:#f92672">import</span> get_logger
+<span style="color:#f92672">from</span> django.contrib.auth <span style="color:#f92672">import</span> get_user_model
+<span style="color:#f92672">from</span> django.db <span style="color:#f92672">import</span> transaction
+<span style="color:#f92672">from</span> .signals <span style="color:#f92672">import</span> post_create_openid_user
+logger <span style="color:#f92672">=</span> get_logger(__file__)
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OIDCAuthBackend</span>(ModelBackend):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">authenticate</span>(self, request, nonce<span style="color:#f92672">=</span>None, <span style="color:#f92672">**</span>kwargs):
+        logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39;Authentication OpenID password backend&#39;</span>)
+        redirect_uri <span style="color:#f92672">=</span> settings<span style="color:#f92672">.</span>BASE_SITE_URL <span style="color:#f92672">+</span> str(settings<span style="color:#f92672">.</span>LOGIN_COMPLETE_URL)
+        <span style="color:#66d9ef">if</span> request <span style="color:#f92672">is</span> None:
+            <span style="color:#66d9ef">return</span>
+        code <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>GET<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;code&#39;</span>)
+        token_payload <span style="color:#f92672">=</span> {
+            <span style="color:#e6db74">&#39;client_id&#39;</span>: settings<span style="color:#f92672">.</span>AUTH_OPENID_CLIENT_ID,
+            <span style="color:#e6db74">&#39;client_secret&#39;</span>: settings<span style="color:#f92672">.</span>AUTH_OPENID_CLIENT_SECRET,
+            <span style="color:#e6db74">&#39;grant_type&#39;</span>: <span style="color:#e6db74">&#39;authorization_code&#39;</span>,
+            <span style="color:#e6db74">&#39;code&#39;</span>: code,
+            <span style="color:#e6db74">&#39;redirect_uri&#39;</span>: redirect_uri,
+        }
+        token_response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(settings<span style="color:#f92672">.</span>AUTH_OPENID_TOKEN_ENDPOINT, data<span style="color:#f92672">=</span>token_payload)
+        token_response<span style="color:#f92672">.</span>raise_for_status()
+        token_response_data <span style="color:#f92672">=</span> token_response<span style="color:#f92672">.</span>json()
+        access_token <span style="color:#f92672">=</span> token_response_data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;access_token&#39;</span>)
+        request<span style="color:#f92672">.</span>session[<span style="color:#e6db74">&#39;oidc_auth_access_token&#39;</span>] <span style="color:#f92672">=</span> access_token
+        request_params <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>GET<span style="color:#f92672">.</span>dict()
+        request_params<span style="color:#f92672">.</span>update({
+            <span style="color:#e6db74">&#34;access_token&#34;</span>: access_token,
+        })
+        query <span style="color:#f92672">=</span> urlencode(request_params)
+        userinfo_response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(
+            <span style="color:#e6db74">&#39;{url}?{query}&#39;</span><span style="color:#f92672">.</span>format(url<span style="color:#f92672">=</span>settings<span style="color:#f92672">.</span>AUTH_OPENID_USERINFO_ENDPOINT, query<span style="color:#f92672">=</span>query))
+        userinfo_response<span style="color:#f92672">.</span>raise_for_status()
+        userinfo_data <span style="color:#f92672">=</span> userinfo_response<span style="color:#f92672">.</span>json()
+        <span style="color:#66d9ef">try</span>:
+            oidc_user <span style="color:#f92672">=</span> OIDCUser<span style="color:#f92672">.</span>objects<span style="color:#f92672">.</span>select_related(<span style="color:#e6db74">&#39;user&#39;</span>)<span style="color:#f92672">.</span>get(username<span style="color:#f92672">=</span>userinfo_data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;username&#39;</span>))
+        <span style="color:#66d9ef">except</span> OIDCUser<span style="color:#f92672">.</span>DoesNotExist:
+            oidc_user, user <span style="color:#f92672">=</span> create_oidc_user_from_claims(userinfo_data)
+            post_create_openid_user<span style="color:#f92672">.</span>send(sender<span style="color:#f92672">=</span>user<span style="color:#f92672">.</span>__class__, user<span style="color:#f92672">=</span>user)
+            <span style="color:#75715e"># oidc_user_created.send(sender=self.__class__, request=request, oidc_user=oidc_user)</span>
+        <span style="color:#66d9ef">else</span>:
+            update_oidc_user_from_claims(oidc_user, userinfo_data)
+
+        <span style="color:#66d9ef">return</span> oidc_user<span style="color:#f92672">.</span>user
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_or_create_user</span>(username, email):
+    username <span style="color:#f92672">=</span> smart_text(username)
+
+    <span style="color:#66d9ef">try</span>:
+        user <span style="color:#f92672">=</span> get_user_model()<span style="color:#f92672">.</span>objects<span style="color:#f92672">.</span>get(username<span style="color:#f92672">=</span>username, email<span style="color:#f92672">=</span>email)
+    <span style="color:#66d9ef">except</span> get_user_model()<span style="color:#f92672">.</span>DoesNotExist:
+        user <span style="color:#f92672">=</span> get_user_model()<span style="color:#f92672">.</span>objects<span style="color:#f92672">.</span>create_user(name<span style="color:#f92672">=</span>username, username<span style="color:#f92672">=</span>username, email<span style="color:#f92672">=</span>email)
+
+    <span style="color:#66d9ef">return</span> user
+
+<span style="color:#a6e22e">@transaction.atomic</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_oidc_user_from_claims</span>(userinfo_data):
+    <span style="color:#e6db74">&#34;&#34;&#34; Creates an ``OIDCUser`` instance using the claims extracted from an id_token. &#34;&#34;&#34;</span>
+    username <span style="color:#f92672">=</span> userinfo_data[<span style="color:#e6db74">&#39;username&#39;</span>]
+    <span style="color:#75715e"># email = userinfo_data.get(&#39;email&#39;)</span>
+    <span style="color:#75715e"># u = base64.urlsafe_b64encode(hashlib.sha1(force_bytes(username)).digest()).rstrip(b&#39;=&#39;)</span>
+    <span style="color:#75715e"># user = get_or_create_user(u, email)</span>
+    user, _ <span style="color:#f92672">=</span> get_user_model()<span style="color:#f92672">.</span>objects<span style="color:#f92672">.</span>update_or_create(
+        username<span style="color:#f92672">=</span>username,
+        defaults<span style="color:#f92672">=</span>{
+            <span style="color:#e6db74">&#39;name&#39;</span>: userinfo_data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;displayName&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>),
+            <span style="color:#e6db74">&#39;email&#39;</span>: userinfo_data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;email&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>),
+            <span style="color:#e6db74">&#39;first_name&#39;</span>: userinfo_data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;given_name&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>),
+            <span style="color:#e6db74">&#39;last_name&#39;</span>: userinfo_data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;family_name&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+        }
+    )
+    oidc_user <span style="color:#f92672">=</span> OIDCUser<span style="color:#f92672">.</span>objects<span style="color:#f92672">.</span>create(user<span style="color:#f92672">=</span>user, username<span style="color:#f92672">=</span>username, userinfo<span style="color:#f92672">=</span>userinfo_data)
+
+    <span style="color:#66d9ef">return</span> oidc_user, user
+
+
+<span style="color:#a6e22e">@transaction.atomic</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">update_oidc_user_from_claims</span>(oidc_user, claims):
+    <span style="color:#e6db74">&#34;&#34;&#34; Updates an ``OIDCUser`` instance using the claims extracted from an id_token. &#34;&#34;&#34;</span>
+    oidc_user<span style="color:#f92672">.</span>userinfo <span style="color:#f92672">=</span> claims
+    oidc_user<span style="color:#f92672">.</span>save()
+    oidc_user<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>email <span style="color:#f92672">=</span> claims<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;email&#39;</span>)
+    oidc_user<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>save()
+    
+</code></pre></div><p>####<code>middleware.py</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+
+<span style="color:#f92672">import</span> time
+<span style="color:#f92672">from</span> django.conf <span style="color:#f92672">import</span> settings
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OIDCRefreshIDTokenMiddleware</span>:
+
+    <span style="color:#66d9ef">def</span> __init__(self, get_response):
+        self<span style="color:#f92672">.</span>get_response <span style="color:#f92672">=</span> get_response
+
+    <span style="color:#66d9ef">def</span> __call__(self, request):
+        <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;GET&#39;</span> <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> request<span style="color:#f92672">.</span>is_ajax() <span style="color:#f92672">and</span> request<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>is_authenticated:
+            self<span style="color:#f92672">.</span>refresh_token(request)
+        response <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_response(request)
+        <span style="color:#66d9ef">return</span> response
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">refresh_token</span>(self, request):
+        refresh_token <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;oidc_auth_refresh_token&#39;</span>)
+        <span style="color:#66d9ef">if</span> refresh_token <span style="color:#f92672">is</span> None:
+            <span style="color:#66d9ef">return</span>
+        id_token_exp_timestamp <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;oidc_auth_id_token_exp_timestamp&#39;</span>, None)
+        now_timestamp <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+        <span style="color:#66d9ef">if</span> id_token_exp_timestamp <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> None <span style="color:#f92672">and</span> id_token_exp_timestamp <span style="color:#f92672">&gt;</span> now_timestamp:
+            <span style="color:#66d9ef">return</span>
+
+        refresh_token <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>pop(<span style="color:#e6db74">&#39;oidc_auth_refresh_token&#39;</span>)
+        token_payload <span style="color:#f92672">=</span> {
+            <span style="color:#e6db74">&#39;client_id&#39;</span>: settings<span style="color:#f92672">.</span>AUTH_OPENID_CLIENT_ID,
+            <span style="color:#e6db74">&#39;client_secret&#39;</span>: settings<span style="color:#f92672">.</span>AUTH_OPENID_CLIENT_SECRET,
+            <span style="color:#e6db74">&#39;grant_type&#39;</span>: <span style="color:#e6db74">&#39;refresh_token&#39;</span>,
+            <span style="color:#e6db74">&#39;refresh_token&#39;</span>: refresh_token,
+        }
+</code></pre></div><p>####<code>models.py</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+
+<span style="color:#f92672">from</span> django.conf <span style="color:#f92672">import</span> settings
+<span style="color:#f92672">from</span> django.db <span style="color:#f92672">import</span> models
+<span style="color:#f92672">from</span> django.utils.translation <span style="color:#f92672">import</span> ugettext_lazy <span style="color:#66d9ef">as</span> _
+<span style="color:#f92672">from</span> jsonfield <span style="color:#f92672">import</span> JSONField
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OIDCUser</span>(models<span style="color:#f92672">.</span>Model):
+    user <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>OneToOneField(
+        settings<span style="color:#f92672">.</span>AUTH_USER_MODEL, on_delete<span style="color:#f92672">=</span>models<span style="color:#f92672">.</span>CASCADE, related_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;oidc_user&#39;</span>)
+    username <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">255</span>, unique<span style="color:#f92672">=</span>True, verbose_name<span style="color:#f92672">=</span>_(<span style="color:#e6db74">&#39;Subject identifier&#39;</span>))
+    userinfo <span style="color:#f92672">=</span> JSONField(verbose_name<span style="color:#f92672">=</span>_(<span style="color:#e6db74">&#39;Subject extra data&#39;</span>))
+
+    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Meta</span>:
+        verbose_name <span style="color:#f92672">=</span> _(<span style="color:#e6db74">&#39;OpenID Connect user&#39;</span>)
+        verbose_name_plural <span style="color:#f92672">=</span> _(<span style="color:#e6db74">&#39;OpenID Connect users&#39;</span>)
+
+    <span style="color:#66d9ef">def</span> __str__(self):
+        <span style="color:#66d9ef">return</span> str(self<span style="color:#f92672">.</span>user)
+</code></pre></div><h3 id="signalspy"><code>signals.py</code></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+
+<span style="color:#f92672">from</span> django.dispatch <span style="color:#f92672">import</span> Signal
+
+post_create_openid_user <span style="color:#f92672">=</span> Signal(providing_args<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#39;user&#39;</span>,))
+post_openid_login_success <span style="color:#f92672">=</span> Signal(providing_args<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#39;user&#39;</span>, <span style="color:#e6db74">&#39;request&#39;</span>))
+</code></pre></div><h3 id="urlspy"><code>urls.py</code></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+
+<span style="color:#f92672">from</span> django.urls <span style="color:#f92672">import</span> path
+
+<span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> views
+
+urlpatterns <span style="color:#f92672">=</span> [
+    path(<span style="color:#e6db74">&#39;login/&#39;</span>, views<span style="color:#f92672">.</span>OIDCAuthRequestView<span style="color:#f92672">.</span>as_view(), name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;openid-login&#39;</span>),
+    path(<span style="color:#e6db74">&#39;login/complete/&#39;</span>, views<span style="color:#f92672">.</span>OIDCAuthCallbackView<span style="color:#f92672">.</span>as_view(),
+         name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;openid-login-complete&#39;</span>),
+]
+</code></pre></div><h3 id="viewspy"><code>views.py</code></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+
+rom django<span style="color:#f92672">.</span>views<span style="color:#f92672">.</span>generic <span style="color:#f92672">import</span> View
+<span style="color:#f92672">from</span> django.conf <span style="color:#f92672">import</span> settings
+<span style="color:#75715e"># from django.utils.crypto import get_random_string</span>
+<span style="color:#f92672">from</span> django.utils.http <span style="color:#f92672">import</span> is_safe_url, urlencode
+<span style="color:#f92672">from</span> django.http <span style="color:#f92672">import</span> HttpResponseRedirect, QueryDict
+<span style="color:#f92672">from</span> django.contrib <span style="color:#f92672">import</span> auth
+<span style="color:#f92672">from</span> .signals <span style="color:#f92672">import</span> post_openid_login_success
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OIDCAuthRequestView</span>(View):
+
+    http_method_names <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;get&#39;</span>,]
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(self, request):
+        redirect_uri <span style="color:#f92672">=</span> settings<span style="color:#f92672">.</span>BASE_SITE_URL <span style="color:#f92672">+</span> str(settings<span style="color:#f92672">.</span>LOGIN_COMPLETE_URL)
+        authentication_request_params <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>GET<span style="color:#f92672">.</span>dict()
+        authentication_request_params<span style="color:#f92672">.</span>update({
+            <span style="color:#e6db74">&#39;response_type&#39;</span>: <span style="color:#e6db74">&#39;code&#39;</span>,
+            <span style="color:#e6db74">&#39;client_id&#39;</span>: settings<span style="color:#f92672">.</span>AUTH_OPENID_CLIENT_ID,
+            <span style="color:#e6db74">&#39;redirect_uri&#39;</span>: redirect_uri,
+        })
+
+        next_url <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>GET<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;next&#39;</span>)
+        request<span style="color:#f92672">.</span>session[<span style="color:#e6db74">&#39;oidc_auth_next_url&#39;</span>] <span style="color:#f92672">=</span> next_url \
+            <span style="color:#66d9ef">if</span> is_safe_url(url<span style="color:#f92672">=</span>next_url, allowed_hosts<span style="color:#f92672">=</span>(request<span style="color:#f92672">.</span>get_host(), )) <span style="color:#66d9ef">else</span> None
+
+        query <span style="color:#f92672">=</span> urlencode(authentication_request_params)
+        redirect_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{url}?{query}&#39;</span><span style="color:#f92672">.</span>format(
+            url<span style="color:#f92672">=</span>settings<span style="color:#f92672">.</span>AUTH_OPENID_SERVER_URL, query<span style="color:#f92672">=</span>query)
+        <span style="color:#66d9ef">return</span> HttpResponseRedirect(redirect_url)
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OIDCAuthCallbackView</span>(View):
+
+    http_method_names <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;get&#39;</span>, ]
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(self, request):
+        callback_params <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>GET
+        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;code&#39;</span> <span style="color:#f92672">in</span> callback_params:
+            next_url <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;oidc_auth_next_url&#39;</span>, None)
+            user <span style="color:#f92672">=</span> auth<span style="color:#f92672">.</span>authenticate(request<span style="color:#f92672">=</span>request)
+            <span style="color:#66d9ef">if</span> user <span style="color:#f92672">and</span> user<span style="color:#f92672">.</span>is_active:
+                auth<span style="color:#f92672">.</span>login(self<span style="color:#f92672">.</span>request, user)
+                post_openid_login_success<span style="color:#f92672">.</span>send(
+                    sender<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>__class__, user<span style="color:#f92672">=</span>user, request<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>request
+                )
+                <span style="color:#66d9ef">return</span> HttpResponseRedirect(
+                    next_url <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;/&#39;</span>)
+
+        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;error&#39;</span> <span style="color:#f92672">in</span> callback_params:
+                auth<span style="color:#f92672">.</span>logout(request)
+
+        <span style="color:#66d9ef">return</span> HttpResponseRedirect(<span style="color:#e6db74">&#39;/&#39;</span>)
+</code></pre></div><h2 id="其他需要修改的文件">其他需要修改的文件</h2>
+<h3 id="jumpserverappsauthenticationsignals_handlerspy"><code>jumpserver/apps/authentication/signals_handlers.py</code></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">...</span>
+<span style="color:#f92672">from</span> common.utils <span style="color:#f92672">import</span> get_request_ip
+<span style="color:#75715e"># from .backends.openid import new_client</span>
+<span style="color:#f92672">import</span> requests
+<span style="color:#f92672">from</span> .backends.oidc_rp.signals <span style="color:#f92672">import</span> (
+    post_create_openid_user, post_openid_login_success
+)
+<span style="color:#f92672">from</span> .tasks <span style="color:#f92672">import</span> write_login_log_async
+<span style="color:#f92672">from</span> .signals <span style="color:#f92672">import</span> post_auth_success, post_auth_failed
+<span style="color:#f92672">...</span>
+
+
+<span style="color:#a6e22e">@receiver</span>(user_logged_out)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_user_logged_out</span>(sender, request, user, <span style="color:#f92672">**</span>kwargs):
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> settings<span style="color:#f92672">.</span>AUTH_OPENID:
+        <span style="color:#66d9ef">return</span>
+
+    query <span style="color:#f92672">=</span> QueryDict(<span style="color:#e6db74">&#39;&#39;</span>, mutable<span style="color:#f92672">=</span>True)
+    query<span style="color:#f92672">.</span>update({
+        <span style="color:#e6db74">&#39;redirect_uri&#39;</span>: settings<span style="color:#f92672">.</span>BASE_SITE_URL
+    })
+
+    openid_logout_url <span style="color:#f92672">=</span> settings<span style="color:#f92672">.</span>AUTH_OPENID_LOGOUT
+    requests<span style="color:#f92672">.</span>get(openid_logout_url)
+    <span style="color:#75715e"># client = new_client()</span>
+    <span style="color:#75715e"># openid_logout_url = &#34;%s?%s&#34; % (</span>
+    <span style="color:#75715e">#     client.openid_connect_client.get_url(</span>
+    <span style="color:#75715e">#         name=&#39;end_session_endpoint&#39;),</span>
+    <span style="color:#75715e">#     query.urlencode()</span>
+    <span style="color:#75715e"># )</span>
+
+    request<span style="color:#f92672">.</span>COOKIES[<span style="color:#e6db74">&#39;next&#39;</span>] <span style="color:#f92672">=</span> openid_logout_url
+<span style="color:#f92672">.....</span>
+</code></pre></div><h3 id="jumpserverappsjumpserversettingspy"><code>jumpserver/apps/jumpserver/settings.py</code></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">...</span>
+
+MIDDLEWARE <span style="color:#f92672">=</span> [
+    <span style="color:#e6db74">&#39;django.middleware.security.SecurityMiddleware&#39;</span>,
+    <span style="color:#e6db74">&#39;django.contrib.sessions.middleware.SessionMiddleware&#39;</span>,
+    <span style="color:#e6db74">&#39;django.middleware.locale.LocaleMiddleware&#39;</span>,
+    <span style="color:#e6db74">&#39;django.middleware.common.CommonMiddleware&#39;</span>,
+    <span style="color:#e6db74">&#39;django.middleware.csrf.CsrfViewMiddleware&#39;</span>,
+    <span style="color:#e6db74">&#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;</span>,
+    <span style="color:#e6db74">&#39;django.contrib.messages.middleware.MessageMiddleware&#39;</span>,
+    <span style="color:#e6db74">&#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;</span>,
+    <span style="color:#75715e"># &#39;authentication.backends.openid.middleware.OpenIDAuthenticationMiddleware&#39;,</span>
+    <span style="color:#e6db74">&#39;authentication.backends.oidc_rp.middleware.OIDCRefreshIDTokenMiddleware&#39;</span>,
+    <span style="color:#e6db74">&#39;jumpserver.middleware.TimezoneMiddleware&#39;</span>,
+    <span style="color:#e6db74">&#39;jumpserver.middleware.DemoMiddleware&#39;</span>,
+    <span style="color:#e6db74">&#39;jumpserver.middleware.RequestMiddleware&#39;</span>,
+    <span style="color:#e6db74">&#39;orgs.middleware.OrgMiddleware&#39;</span>,
+]
+
+<span style="color:#f92672">...</span>
+
+<span style="color:#75715e"># openid</span>
+<span style="color:#75715e"># Auth OpenID settings</span>
+BASE_SITE_URL <span style="color:#f92672">=</span> CONFIG<span style="color:#f92672">.</span>BASE_SITE_URL
+AUTH_OPENID <span style="color:#f92672">=</span> CONFIG<span style="color:#f92672">.</span>AUTH_OPENID
+AUTH_OPENID_SERVER_URL <span style="color:#f92672">=</span> CONFIG<span style="color:#f92672">.</span>AUTH_OPENID_SERVER_URL
+AUTH_OPENID_TOKEN_ENDPOINT <span style="color:#f92672">=</span> CONFIG<span style="color:#f92672">.</span>AUTH_OPENID_TOKEN_ENDPOINT
+AUTH_OPENID_USERINFO_ENDPOINT <span style="color:#f92672">=</span> CONFIG<span style="color:#f92672">.</span>AUTH_OPENID_USERINFO_ENDPOINT
+AUTH_OPENID_CLIENT_ID <span style="color:#f92672">=</span> CONFIG<span style="color:#f92672">.</span>AUTH_OPENID_CLIENT_ID
+AUTH_OPENID_CLIENT_SECRET <span style="color:#f92672">=</span> CONFIG<span style="color:#f92672">.</span>AUTH_OPENID_CLIENT_SECRET
+AUTH_OPENID_LOGOUT <span style="color:#f92672">=</span> CONFIG<span style="color:#f92672">.</span>AUTH_OPENID_LOGOUT
+<span style="color:#75715e"># AUTH_OPENID_BACKENDS = [</span>
+<span style="color:#75715e">#     &#39;authentication.backends.openid.backends.OpenIDAuthorizationPasswordBackend&#39;,</span>
+<span style="color:#75715e">#     &#39;authentication.backends.openid.backends.OpenIDAuthorizationCodeBackend&#39;,</span>
+<span style="color:#75715e"># ]</span>
+AUTH_OPENID_BACKENDS <span style="color:#f92672">=</span> [
+    <span style="color:#e6db74">&#39;authentication.backends.oidc_rp.backends.OIDCAuthBackend&#39;</span>,
+    <span style="color:#75715e"># &#39;authentication.backends.openid.backends.OpenIDAuthorizationCodeBackend&#39;,</span>
+]
+
+<span style="color:#66d9ef">if</span> AUTH_OPENID:
+    LOGIN_URL <span style="color:#f92672">=</span> reverse_lazy(<span style="color:#e6db74">&#34;authentication:openid:openid-login&#34;</span>)
+    LOGIN_COMPLETE_URL <span style="color:#f92672">=</span> reverse_lazy(<span style="color:#e6db74">&#34;authentication:openid:openid-login-complete&#34;</span>)
+    AUTHENTICATION_BACKENDS<span style="color:#f92672">.</span>insert(<span style="color:#ae81ff">0</span>, AUTH_OPENID_BACKENDS[<span style="color:#ae81ff">0</span>])
+    <span style="color:#75715e"># AUTHENTICATION_BACKENDS.insert(0, AUTH_OPENID_BACKENDS[1])</span>
+<span style="color:#f92672">...</span>
+</code></pre></div><h3 id="jumpserverconfig_exampleyml"><code>jumpserver/config_example.yml</code></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">BASE_SITE_URL:
+<span style="color:#66d9ef">AUTH_OPENID</span>: True  <span style="color:#75715e"># True or False</span>
+AUTH_OPENID_SERVER_URL:
+AUTH_OPENID_CLIENT_ID:
+AUTH_OPENID_CLIENT_SECRET:
+AUTH_OPENID_TOKEN_ENDPOINT:
+AUTH_OPENID_USERINFO_ENDPOINT:
+AUTH_OPENID_LOGOUT:
+</code></pre></div><h3 id="jumpserverappsauthenticationurlsview_urlspy"><code>jumpserver/apps/authentication/urls/view_urls.py</code></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">...</span>
+urlpatterns <span style="color:#f92672">=</span> [
+    <span style="color:#75715e"># openid</span>
+    path(<span style="color:#e6db74">&#39;openid/&#39;</span>, include((<span style="color:#e6db74">&#39;authentication.backends.oidc_rp.urls&#39;</span>, <span style="color:#e6db74">&#39;authentication&#39;</span>), namespace<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;openid&#39;</span>)),
+
+    <span style="color:#75715e"># login</span>
+    path(<span style="color:#e6db74">&#39;login/&#39;</span>, views<span style="color:#f92672">.</span>UserLoginView<span style="color:#f92672">.</span>as_view(), name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;login&#39;</span>),
+    path(<span style="color:#e6db74">&#39;login/otp/&#39;</span>, views<span style="color:#f92672">.</span>UserLoginOtpView<span style="color:#f92672">.</span>as_view(), name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;login-otp&#39;</span>),
+    path(<span style="color:#e6db74">&#39;logout/&#39;</span>, views<span style="color:#f92672">.</span>UserLogoutView<span style="color:#f92672">.</span>as_view(), name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;logout&#39;</span>),
+]
+</code></pre></div><h2 id="最后执行">最后执行</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd apps
+python manage.py makemigrations
+python manage.py migrate
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+    </div>
+
+    <div class="post-copyright">
+            
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>w01fb0ss </span>
+                </p>
+            
+
+            
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://zgdd.github.io/2019/000/>https://zgdd.github.io/2019/000/</span>
+            </p>
+            
+            
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
+            
+            <span class="tag"><a href="https://zgdd.github.io/tags/%E8%B7%B3%E6%9D%BF%E6%9C%BA/">
+                    #跳板机</a></span>
+            
+            <span class="tag"><a href="https://zgdd.github.io/tags/%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/">
+                    #二次开发</a></span>
+            
+            <span class="tag"><a href="https://zgdd.github.io/tags/python/">
+                    #python</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> ·
+                <span><a href="https://zgdd.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://zgdd.github.io/2019/001/" class="prev" rel="prev" title="Linux应急响应流程"><i class="iconfont icon-left"></i>&nbsp;Linux应急响应流程</a>
+        
+        
+        <a href="https://zgdd.github.io/2019/002/" class="next" rel="next" title="centos7 源码安装nginx">centos7 源码安装nginx&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.css">
+<script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+
+        clientID: '1179a38ac904130ae2bf',
+        clientSecret: '94a570cd5b595699757d0d05972a9f2cafa2873d',
+        repo: 'w01fb0ss.github.io',
+        owner: 'w01fb0ss',
+        admin: ['w01fb0ss'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://zgdd.github.io">w01fb0ss</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

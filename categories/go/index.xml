@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on zgdd`s blog</title>
+    <link>https://zgdd.github.io/categories/go/</link>
+    <description>Recent content in go on zgdd`s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 09 Apr 2020 22:54:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://zgdd.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go leetcode题目（持续更新）</title>
+      <link>https://zgdd.github.io/2020/008/</link>
+      <pubDate>Thu, 09 Apr 2020 22:54:42 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/008/</guid>
+      <description>简介 最近在刷leetcode，这篇博客是整理刷leetcode的一些题目及实现。 链表相关 合并两个有序链表 题目 将两个有序链表合并为一个新的有序</description>
+    </item>
+    
+    <item>
+      <title>Go切片学习拓展</title>
+      <link>https://zgdd.github.io/2020/007/</link>
+      <pubDate>Sun, 08 Mar 2020 21:35:13 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/007/</guid>
+      <description>简介 go中因为数组使用不够灵活，使得切片的使用相当广泛，因此理解切片的原理和用法是一个Go程序员必备技能。 本篇不再介绍基本的切片的声明和使用</description>
+    </item>
+    
+    <item>
+      <title>栈（Go实现）</title>
+      <link>https://zgdd.github.io/2020/006/</link>
+      <pubDate>Mon, 06 Jan 2020 15:59:07 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/006/</guid>
+      <description>概念 栈是一种典型的先进后出( First in Last Out )的数据结构，其操作主要有压栈(push)与出栈(pop)两种操作，如下图所示（维基百科）。两种操作都操</description>
+    </item>
+    
+    <item>
+      <title>线性表（Go实现）</title>
+      <link>https://zgdd.github.io/2020/005/</link>
+      <pubDate>Thu, 02 Jan 2020 21:58:05 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/005/</guid>
+      <description>概念 线性表（linear_list）： 由n个 相同数据元素 组成的 有限序列。 序列：元素之间是有序的，若元素存在多个，则第一个元素无前驱，最后一个</description>
+    </item>
+    
+    <item>
+      <title>go第三方日志库Logrus使用</title>
+      <link>https://zgdd.github.io/2019/003/</link>
+      <pubDate>Sat, 28 Dec 2019 10:43:23 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2019/003/</guid>
+      <description>Logrus介绍 Logrus是Go的结构化logger，与标准库logger完全API兼容。 它有以下特点： 完全兼容标准日志库，拥有七种日志级</description>
+    </item>
+    
+  </channel>
+</rss>

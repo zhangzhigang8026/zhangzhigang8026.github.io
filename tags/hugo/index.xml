@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on zgdd`s blog</title>
+    <link>https://zgdd.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on zgdd`s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 11 Apr 2020 16:22:55 +0800</lastBuildDate>
+    
+	<atom:link href="https://zgdd.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 Travis CI 自动部署 Hugo 博客</title>
+      <link>https://zgdd.github.io/2020/011/</link>
+      <pubDate>Sat, 11 Apr 2020 16:22:55 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/011/</guid>
+      <description>通过 Travis CI 来部署 Hugo 或者 Hexo 博客可能在配置的时候会麻烦一点，但配置好后确实是方便了不少。特别是对于 Hugo 这种没有部署插件的静态网站生成器，只能手动部署</description>
+    </item>
+    
+    <item>
+      <title>Hugo &#43; GitHub Pages 搭建个人博客</title>
+      <link>https://zgdd.github.io/2020/010/</link>
+      <pubDate>Sat, 11 Apr 2020 16:22:43 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/010/</guid>
+      <description>Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应该被称作静态网站生成器。这类应用将 Markdown 文件和主题一起编译成由 HTML、CSS、JavaS</description>
+    </item>
+    
+  </channel>
+</rss>

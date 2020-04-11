@@ -1,0 +1,141 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zgdd`s blog on zgdd`s blog</title>
+    <link>https://zgdd.github.io/</link>
+    <description>Recent content in zgdd`s blog on zgdd`s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 12 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zgdd.github.io/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Posts</title>
+      <link>https://zgdd.github.io/posts/</link>
+      <pubDate>Sat, 11 Apr 2020 16:22:55 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>w01fb0ss</title>
+      <link>https://zgdd.github.io/about/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://zgdd.github.io/about/</guid>
+      <description>
+&lt;style&gt;
+
+    @import url(&#39;https://fonts.googleapis.com/css?family=Katibeh&amp;display=swap&#39;);
+
+    .about-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .about-info-left li {
+        list-style-type: none;
+    }
+
+    .about-info-right {
+        margin: .5em 1.25em;
+    }
+
+    .about-info-right img {
+        width: 130px;
+    }
+
+    .about-info-right .left-ear,
+    .about-info-right .left-hand,
+    .about-info-right .right-ear,
+    .about-info-right .right-hand {
+        display: none;
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        .about-info {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        .about-info-right {
+            margin: auto auto 2em;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-info-right img {
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+        }
+
+        .about-info-right .left-hand {
+            font-family: &#39;Katibeh&#39;;
+            display: inline;
+            font-size: 5em;
+            transform: translate(20px);
+            -moz-transform: translate(20px);
+            -webkit-transform: translate(20px);
+            -o-transform: translate(20px);
+        }
+
+        .about-info-right .right-hand {
+            font-family: &#39;Katibeh&#39;;
+            display: inline;
+            font-size: 5em;
+            transform: translate(-18px);
+            -moz-transform: translate(-18px);
+            -webkit-transform: translate(-18px);
+            -o-transform: translate(-18px);
+        }
+
+        .about-info-right .left-ear {
+            display: inline;
+            font-size: 1.2em;
+            align-self: flex-start;
+            transform: rotate(-40deg) translate(20px, 15px);
+            -moz-transform: rotate(-40deg) translate(20px, 15px);
+            -webkit-transform: rotate(-40deg) translate(20px, 15px);
+            -o-transform: rotate(-40deg) translate(20px, 15px);
+        }
+
+        .about-info-right .right-ear {
+            display: inline;
+            font-size: 1.2em;
+            align-self: flex-start;
+            transform: rotate(45deg) translate(-13px, 15px);
+            -moz-transform: rotate(45deg) translate(-13px, 15px);
+            -webkit-transform: rotate(45deg) translate(-13px, 15px);
+            -o-transform: rotate(45deg) translate(-13px, 15px);
+        }
+    }
+&lt;/style&gt;
+
+
+&lt;div class=&#34;about-info&#34;&gt;
+    &lt;div class=&#34;about-info-left&#34;&gt;
+        &lt;p&gt;一个混在安全圈的Gopher.&lt;/p&gt;
+        &lt;p&gt;Contact me:&lt;/p&gt;
+        &lt;ul&gt;
+	&lt;li&gt;&lt;p&gt;&lt;span class=&#34;iconfont icon-mail&#34;&gt;&lt;/span&gt; Email: &lt;a href=&#34;mailto:xiaoshenlong1910@gmail.com&#34;
+                    rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;xiaoshenlong1910@gmail.com&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;p&gt;&lt;span class=&#34;iconfont icon-github&#34;&gt;&lt;/span&gt; GitHub: &lt;a href=&#34;https://github.com/w01fb0ss&#34;
+                        rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;w01fb0ss&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;about-info-right&#34;&gt;
+        &lt;img alt=&#34;w01fb0ss&#34; src=&#34;https://w01fb0ss.github.io/me/avatar.jpg&#34;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;My Github chart:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ghchart.rshah.org/w01fb0ss&#34; alt=&#34;w01fb0ss&#39;s Github chart&#34; style=&#34;width: 100%;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

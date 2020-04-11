@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on zgdd`s blog</title>
+    <link>https://zgdd.github.io/categories/python/</link>
+    <description>Recent content in python on zgdd`s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 25 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://zgdd.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jumpserver OAuth2</title>
+      <link>https://zgdd.github.io/2019/000/</link>
+      <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zgdd.github.io/2019/000/</guid>
+      <description>链接 改版Jumpserver 首先新建backup oidc_rp 文件结果如下： oidc_rp ├── __init__.py ├── backends.py ├── middleware.py ├── models.py ├── signals.py ├── urls.py └── views.py 下面是每个文件的具</description>
+    </item>
+    
+  </channel>
+</rss>

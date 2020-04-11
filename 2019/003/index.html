@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="w01fb0ss">
+  <meta name="description" content="w01fb0ss 的个人博客">
+  <meta name="keywords" content="blog, KMS, Hugo, GNU/Linux, Linux">
+  
+  <link rel="prev" href="https://zgdd.github.io/2019/002/" />
+  <link rel="next" href="https://zgdd.github.io/2020/004/" />
+  <link rel="canonical" href="https://zgdd.github.io/2019/003/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           go第三方日志库Logrus使用 | zgdd`s blog
+       
+  </title>
+  <meta name="title" content="go第三方日志库Logrus使用 | zgdd`s blog">
+    
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/zgdd.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "go第三方日志库Logrus使用",
+    "headline" : "go第三方日志库Logrus使用",
+    "description" : "Logrus介绍 Logrus是Go的结构化logger，与标准库logger完全API兼容。 它有以下特点： 完全兼容标准日志库，拥有七种日志级",
+    "inLanguage" : "zh-cn",
+    "author" : "w01fb0ss",
+    "creator" : "w01fb0ss",
+    "publisher": "w01fb0ss",
+    "accountablePerson" : "w01fb0ss",
+    "copyrightHolder" : "w01fb0ss",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-12-28 10:43:23 \x2b0800 CST",
+    "dateModified" : "2019-12-28 10:43:23 \x2b0800 CST",
+    "url" : "https:\/\/zgdd.github.io\/2019\/003\/",
+    "wordCount" : "1941",
+    "keywords" : [ "go","log", "zgdd`s blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    
+        <div class="top-scroll-bar"></div>
+    
+    <div class="container">
+        <div class="navbar-header header-logo">
+            
+            <span class="logo_mark" >></span>
+            <a href="https://zgdd.github.io">
+                <span class="logo_text" >$ cd /home/ </span>
+                <span class="logo_cursor" ></span>
+            </a>
+            
+        </div>
+        <div class="navbar-right">
+                
+                <span class="menu">
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="w01fb0ss">w01fb0ss</a>
+                
+                </span>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     
+         <div class="top-scroll-bar"></div>
+     
+     <div class="container">
+        <div class="navbar-header">
+            <div class="header-logo">
+                
+                    <span class="logo_mark">></span>
+                    <a href="https://zgdd.github.io">
+                        <span class="logo_text">$ cd /home/ </span>
+                        <span class="logo_cursor"></span>
+                </a>
+                
+            </div>
+            <div class="navbar-right">
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+                <div class="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="w01fb0ss">w01fb0ss</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">go第三方日志库Logrus使用</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://zgdd.github.io" rel="author">w01fb0ss</a> with ♥
+                <span class="post-time">
+                on <time datetime=2019-12-28 itemprop="datePublished">December 28, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://zgdd.github.io/categories/go/"> go </a>
+                        
+                </span>
+                <span class="post-word-count">, 1941 words</span>
+        </div>
+    </header>
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#logrus介绍">Logrus介绍</a></li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#基本示例">基本示例</a></li>
+    <li><a href="#进阶示例">进阶示例</a></li>
+    <li><a href="#日志级别">日志级别</a>
+      <ul>
+        <li><a href="#设置日志级别">设置日志级别</a></li>
+      </ul>
+    </li>
+    <li><a href="#字段">字段</a></li>
+    <li><a href="#默认字段">默认字段</a></li>
+    <li><a href="#日志条目">日志条目</a></li>
+    <li><a href="#hooks">Hooks</a></li>
+    <li><a href="#格式化">格式化</a></li>
+    <li><a href="#记录函数名">记录函数名</a></li>
+    <li><a href="#线程安全">线程安全</a></li>
+    <li><a href="#gin框架使用logrus">gin框架使用logrus</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script>
+
+    <div class="post-content">
+        
+
+        
+
+        
+        
+
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="logrus介绍">Logrus介绍</h2>
+<p><code>Logrus</code>是Go的结构化logger，与标准库logger完全API兼容。
+它有以下特点：</p>
+<ul>
+<li>完全兼容标准日志库，拥有七种日志级别：<code>Trace</code>、<code>Debug</code>、<code>Info</code>、<code>Warning</code>、<code>Error</code>、<code>Fatal</code>和<code>Panic</code>；</li>
+<li>可扩展的Hook机制，允许使用者通过Hook的方式将日志分发到任意地方，如本地文件系统，logstash，elasticsearch或者mq等，或者通过Hook定义日志内容和格式等；</li>
+<li>可选的日志输出格式，内置了两种日志格式JSONFormater和TextFormatter，还可以自定义日志格式；</li>
+<li>Field机制，通过Filed机制进行结构化的日志记录</li>
+<li>线程安全</li>
+</ul>
+<h2 id="安装">安装</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go get github.com/sirupsen/logrus
+</code></pre></div><h2 id="基本示例">基本示例</h2>
+<p>使用Logrus最简单的方法是简单的包级导出日志程序:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#a6e22e">log</span> <span style="color:#e6db74">&#34;github.com/sirupsen/logrus&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>()  {
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">WithFields</span>(<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fields</span>{
+		<span style="color:#e6db74">&#34;animal&#34;</span>: <span style="color:#e6db74">&#34;walrus&#34;</span>,
+	}).<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;A walrus appears&#34;</span>)
+}
+</code></pre></div><h2 id="进阶示例">进阶示例</h2>
+<p>对于更高级的用法，例如在同一应用程序记录到多个位置，你还可以创建logrus Logger的实例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;os&#34;</span>
+
+	<span style="color:#e6db74">&#34;github.com/sirupsen/logrus&#34;</span>
+)
+
+<span style="color:#75715e">// 创建一个新的logger实例。可以创建任意多个。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">log</span> = <span style="color:#a6e22e">logrus</span>.<span style="color:#a6e22e">New</span>()
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>()  {
+	<span style="color:#75715e">// 设置日志输出为os.Stdout，（io.Writer）
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Out</span> = <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Stdout</span>
+
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">WithFields</span>(<span style="color:#a6e22e">logrus</span>.<span style="color:#a6e22e">Fields</span>{
+		<span style="color:#e6db74">&#34;animal&#34;</span>: <span style="color:#e6db74">&#34;walrus&#34;</span>,
+		<span style="color:#e6db74">&#34;size&#34;</span>:   <span style="color:#ae81ff">10</span>,
+	}).<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;A group of walrus emerges from the ocean&#34;</span>)
+}
+</code></pre></div><h2 id="日志级别">日志级别</h2>
+<p><code>Logrus</code>有七个日志级别：<code>Trace</code>, <code>Debug</code>, <code>Info</code>, <code>Warning</code>, <code>Error</code>, <code>Fatal</code> 和 <code>Panic</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Trace</span>(<span style="color:#e6db74">&#34;Something very low level.&#34;</span>)
+<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Debug</span>(<span style="color:#e6db74">&#34;Useful debugging information.&#34;</span>)
+<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;Something noteworthy happened!&#34;</span>)
+<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Warn</span>(<span style="color:#e6db74">&#34;You should probably take a look at this.&#34;</span>)
+<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#e6db74">&#34;Something failed but I&#39;m not quitting.&#34;</span>)
+<span style="color:#75715e">// Calls os.Exit(1) after logging
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#e6db74">&#34;Bye.&#34;</span>)
+<span style="color:#75715e">// Calls panic() after logging
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Panic</span>(<span style="color:#e6db74">&#34;I&#39;m bailing.&#34;</span>)
+</code></pre></div><h3 id="设置日志级别">设置日志级别</h3>
+<p>你可以在Logger上设置日志记录级别，然后它只会记录具有该级别或以上级别任何内容的条目：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 会记录info及以上级别 (warn, error, fatal, panic)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">SetLevel</span>(<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">InfoLevel</span>)
+</code></pre></div><p>如果你的程序支持debug或环境变量模式，设置<code>log.Level = logrus.DebugLevel</code>会很有帮助。</p>
+<h2 id="字段">字段</h2>
+<p>Logrus鼓励通过日志字段进行谨慎的结构化日志记录，而不是冗长的、不可解析的错误消息。
+例如，区别于使用<code>log.Fatalf(&quot;Failed to send event %s to topic %s with key %d&quot;)</code>，你应该使用如下方式记录更容易发现的内容:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">WithFields</span>(<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fields</span>{
+  <span style="color:#e6db74">&#34;event&#34;</span>: <span style="color:#a6e22e">event</span>,
+  <span style="color:#e6db74">&#34;topic&#34;</span>: <span style="color:#a6e22e">topic</span>,
+  <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#a6e22e">key</span>,
+}).<span style="color:#a6e22e">Fatal</span>(<span style="color:#e6db74">&#34;Failed to send event&#34;</span>)
+</code></pre></div><p><code>WithFields</code>的调用是可逆的。</p>
+<h2 id="默认字段">默认字段</h2>
+<p>通常，将一些字段始终附加到应用程序的全部或部分的日志语句中会很有帮助。例如，你可能希望始终在请求的上下文中记录<code>request_id</code>和<code>user_ip</code>。
+区别于在每一行日志中写上<code>log.WithFields(log.Fields{&quot;request_id&quot;: request_id, &quot;user_ip&quot;: user_ip})</code>，你可以向下面的示例代码一样创建一个<code>logrus.Entry</code>去传递这些字段。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">requestLogger</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">WithFields</span>(<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fields</span>{<span style="color:#e6db74">&#34;request_id&#34;</span>: <span style="color:#a6e22e">request_id</span>, <span style="color:#e6db74">&#34;user_ip&#34;</span>: <span style="color:#a6e22e">user_ip</span>})
+<span style="color:#a6e22e">requestLogger</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;something happened on that request&#34;</span>) <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">will</span> <span style="color:#a6e22e">log</span> <span style="color:#a6e22e">request_id</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">user_ip</span>
+<span style="color:#a6e22e">requestLogger</span>.<span style="color:#a6e22e">Warn</span>(<span style="color:#e6db74">&#34;something not great happened&#34;</span>)
+</code></pre></div><h2 id="日志条目">日志条目</h2>
+<p>除了使用<code>WithField</code>或<code>WithFields</code>添加的字段外，一些字段会自动添加到所有日志记录事中:</p>
+<ul>
+<li>time：记录日志时的时间戳</li>
+<li>msg：记录的日志信息</li>
+<li>level：记录的日志级别</li>
+</ul>
+<h2 id="hooks">Hooks</h2>
+<p>你可以添加日志级别的钩子（Hook）。例如，向异常跟踪服务发送<code>Error</code>、<code>Fatal</code>和<code>Panic</code>、信息到StatsD或同时将日志发送到多个位置，例如syslog。
+Logrus配有内置钩子。在<code>init</code>中添加这些内置钩子或你自定义的钩子：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> (
+    <span style="color:#a6e22e">log</span> <span style="color:#e6db74">&#34;github.com/sirupsen/logrus&#34;</span>
+    <span style="color:#e6db74">&#34;gopkg.in/gemnasium/logrus-airbrake-hook.v2&#34;</span> <span style="color:#75715e">// the package is named &#34;airbrake&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">logrus_syslog</span> <span style="color:#e6db74">&#34;github.com/sirupsen/logrus/hooks/syslog&#34;</span>
+    <span style="color:#e6db74">&#34;log/syslog&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">init</span>() {
+
+    <span style="color:#75715e">// Use the Airbrake hook to report errors that have Error severity or above to
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// an exception tracker. You can create custom hooks, see the Hooks section.
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">AddHook</span>(<span style="color:#a6e22e">airbrake</span>.<span style="color:#a6e22e">NewHook</span>(<span style="color:#ae81ff">123</span>, <span style="color:#e6db74">&#34;xyz&#34;</span>, <span style="color:#e6db74">&#34;production&#34;</span>))
+
+    <span style="color:#a6e22e">hook</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">logrus_syslog</span>.<span style="color:#a6e22e">NewSyslogHook</span>(<span style="color:#e6db74">&#34;udp&#34;</span>, <span style="color:#e6db74">&#34;localhost:514&#34;</span>, <span style="color:#a6e22e">syslog</span>.<span style="color:#a6e22e">LOG_INFO</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+     <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#e6db74">&#34;Unable to connect to local syslog daemon&#34;</span>)
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">AddHook</span>(<span style="color:#a6e22e">hook</span>)
+    }
+}
+</code></pre></div><blockquote>
+<p><strong>注意</strong>：Syslog钩子还支持连接到本地syslog（例如. “/dev/log” or “/var/run/syslog” or “/var/run/log”)。有关详细信息，请查看<a href="https://github.com/sirupsen/logrus/blob/master/hooks/syslog/README.md">syslog hook README</a>。</p>
+</blockquote>
+<h2 id="格式化">格式化</h2>
+<p>logrus内置以下两种日志格式化程序：
+<code>logrus.TextFormatter</code>、<code>logrus.JSONFormatter</code>
+还支持一些第三方的格式化程序，详见项目首页。</p>
+<h2 id="记录函数名">记录函数名</h2>
+<p>如果你希望将调用的函数名添加为字段，请通过以下方式设置：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">SetReportCaller</span>(<span style="color:#66d9ef">true</span>)
+</code></pre></div><p>这会将调用者添加为”method”，如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;animal&#34;</span>:<span style="color:#e6db74">&#34;penguin&#34;</span>,<span style="color:#e6db74">&#34;level&#34;</span>:<span style="color:#e6db74">&#34;fatal&#34;</span>,<span style="color:#e6db74">&#34;method&#34;</span>:<span style="color:#e6db74">&#34;github.com/sirupsen/arcticcreatures.migrate&#34;</span>,<span style="color:#e6db74">&#34;msg&#34;</span>:<span style="color:#e6db74">&#34;a penguin swims by&#34;</span>,
+<span style="color:#e6db74">&#34;time&#34;</span>:<span style="color:#e6db74">&#34;2014-03-10 19:57:38.562543129 -0400 EDT&#34;</span><span style="color:#f92672">}</span>
+</code></pre></div><blockquote>
+<p><strong>注意</strong>：开启这个模式会增加性能开销。</p>
+</blockquote>
+<h2 id="线程安全">线程安全</h2>
+<p>默认的logger在并发写的时候是被mutex保护的，比如当同时调用hook和写log时mutex就会被请求，有另外一种情况，文件是以appending mode打开的，此时的并发操作就是安全的，可以用<code>logger.SetNoLock()</code>来关闭它。</p>
+<h2 id="gin框架使用logrus">gin框架使用logrus</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// a gin with logrus demo
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">log</span> = <span style="color:#a6e22e">logrus</span>.<span style="color:#a6e22e">New</span>()
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">init</span>() {
+    <span style="color:#75715e">// Log as JSON instead of the default ASCII formatter.
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Formatter</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">logrus</span>.<span style="color:#a6e22e">JSONFormatter</span>{}
+    <span style="color:#75715e">// Output to stdout instead of the default stderr
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Can be any io.Writer, see below for File example
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Create</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;.<span style="color:#f92672">/</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">log</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;)
+    <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Out</span> = <span style="color:#a6e22e">f</span>
+    <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">SetMode</span>(<span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">ReleaseMode</span>)
+    <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">DefaultWriter</span> = <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Out</span>
+    <span style="color:#75715e">// Only log the warning severity or above.
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Level</span> = <span style="color:#a6e22e">logrus</span>.<span style="color:#a6e22e">InfoLevel</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// 创建一个默认的路由引擎
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Default</span>()
+    <span style="color:#75715e">// GET：请求方式；/hello：请求的路径
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 当客户端以GET方法请求/hello路径时，会执行后面的匿名函数
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;<span style="color:#f92672">/</span><span style="color:#a6e22e">hello</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">WithFields</span>(<span style="color:#a6e22e">logrus</span>.<span style="color:#a6e22e">Fields</span>{
+            <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;<span style="color:#a6e22e">animal</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;<span style="color:#a6e22e">walrus</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;,
+            <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;<span style="color:#a6e22e">size</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;:   <span style="color:#ae81ff">10</span>,
+        }).<span style="color:#a6e22e">Warn</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;<span style="color:#a6e22e">A</span> <span style="color:#a6e22e">group</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">walrus</span> <span style="color:#a6e22e">emerges</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">ocean</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;)
+        <span style="color:#75715e">// c.JSON：返回JSON格式的数据
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#ae81ff">200</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{
+            <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;<span style="color:#a6e22e">message</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;<span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">world</span>!<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;,
+        })
+    })
+    <span style="color:#75715e">// 启动HTTP服务，默认在0.0.0.0:8080启动服务
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">Run</span>()
+}
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+    </div>
+
+    <div class="post-copyright">
+            
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>w01fb0ss </span>
+                </p>
+            
+
+            
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://zgdd.github.io/2019/003/>https://zgdd.github.io/2019/003/</span>
+            </p>
+            
+            
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
+            
+            <span class="tag"><a href="https://zgdd.github.io/tags/go/">
+                    #go</a></span>
+            
+            <span class="tag"><a href="https://zgdd.github.io/tags/log/">
+                    #log</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> ·
+                <span><a href="https://zgdd.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://zgdd.github.io/2019/002/" class="prev" rel="prev" title="centos7 源码安装nginx"><i class="iconfont icon-left"></i>&nbsp;centos7 源码安装nginx</a>
+        
+        
+        <a href="https://zgdd.github.io/2020/004/" class="next" rel="next" title="2020！">2020！&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.css">
+<script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+
+        clientID: '1179a38ac904130ae2bf',
+        clientSecret: '94a570cd5b595699757d0d05972a9f2cafa2873d',
+        repo: 'w01fb0ss.github.io',
+        owner: 'w01fb0ss',
+        admin: ['w01fb0ss'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://zgdd.github.io">w01fb0ss</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

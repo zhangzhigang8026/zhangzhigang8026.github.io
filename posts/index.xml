@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on zgdd`s blog</title>
+    <link>https://zgdd.github.io/posts/</link>
+    <description>Recent content in Posts on zgdd`s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 11 Apr 2020 16:22:55 +0800</lastBuildDate>
+    
+	<atom:link href="https://zgdd.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 Travis CI 自动部署 Hugo 博客</title>
+      <link>https://zgdd.github.io/2020/011/</link>
+      <pubDate>Sat, 11 Apr 2020 16:22:55 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/011/</guid>
+      <description>通过 Travis CI 来部署 Hugo 或者 Hexo 博客可能在配置的时候会麻烦一点，但配置好后确实是方便了不少。特别是对于 Hugo 这种没有部署插件的静态网站生成器，只能手动部署</description>
+    </item>
+    
+    <item>
+      <title>Hugo &#43; GitHub Pages 搭建个人博客</title>
+      <link>https://zgdd.github.io/2020/010/</link>
+      <pubDate>Sat, 11 Apr 2020 16:22:43 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/010/</guid>
+      <description>Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应该被称作静态网站生成器。这类应用将 Markdown 文件和主题一起编译成由 HTML、CSS、JavaS</description>
+    </item>
+    
+    <item>
+      <title>Mac 添加 my.cnf</title>
+      <link>https://zgdd.github.io/2020/009/</link>
+      <pubDate>Fri, 10 Apr 2020 15:54:41 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/009/</guid>
+      <description>mac下mysql没有my.cnf，如果想要修改一些配置还挺懵逼的，网上找了一些资料，经过博主亲测没有问题，发篇文章一为共享，二为做个备忘。</description>
+    </item>
+    
+    <item>
+      <title>Go leetcode题目（持续更新）</title>
+      <link>https://zgdd.github.io/2020/008/</link>
+      <pubDate>Thu, 09 Apr 2020 22:54:42 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/008/</guid>
+      <description>简介 最近在刷leetcode，这篇博客是整理刷leetcode的一些题目及实现。 链表相关 合并两个有序链表 题目 将两个有序链表合并为一个新的有序</description>
+    </item>
+    
+    <item>
+      <title>Go切片学习拓展</title>
+      <link>https://zgdd.github.io/2020/007/</link>
+      <pubDate>Sun, 08 Mar 2020 21:35:13 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/007/</guid>
+      <description>简介 go中因为数组使用不够灵活，使得切片的使用相当广泛，因此理解切片的原理和用法是一个Go程序员必备技能。 本篇不再介绍基本的切片的声明和使用</description>
+    </item>
+    
+    <item>
+      <title>栈（Go实现）</title>
+      <link>https://zgdd.github.io/2020/006/</link>
+      <pubDate>Mon, 06 Jan 2020 15:59:07 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/006/</guid>
+      <description>概念 栈是一种典型的先进后出( First in Last Out )的数据结构，其操作主要有压栈(push)与出栈(pop)两种操作，如下图所示（维基百科）。两种操作都操</description>
+    </item>
+    
+    <item>
+      <title>线性表（Go实现）</title>
+      <link>https://zgdd.github.io/2020/005/</link>
+      <pubDate>Thu, 02 Jan 2020 21:58:05 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/005/</guid>
+      <description>概念 线性表（linear_list）： 由n个 相同数据元素 组成的 有限序列。 序列：元素之间是有序的，若元素存在多个，则第一个元素无前驱，最后一个</description>
+    </item>
+    
+    <item>
+      <title>2020！</title>
+      <link>https://zgdd.github.io/2020/004/</link>
+      <pubDate>Wed, 01 Jan 2020 10:03:27 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2020/004/</guid>
+      <description>2020，新的一年，新的开始，加油</description>
+    </item>
+    
+    <item>
+      <title>go第三方日志库Logrus使用</title>
+      <link>https://zgdd.github.io/2019/003/</link>
+      <pubDate>Sat, 28 Dec 2019 10:43:23 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2019/003/</guid>
+      <description>Logrus介绍 Logrus是Go的结构化logger，与标准库logger完全API兼容。 它有以下特点： 完全兼容标准日志库，拥有七种日志级</description>
+    </item>
+    
+    <item>
+      <title>centos7 源码安装nginx</title>
+      <link>https://zgdd.github.io/2019/002/</link>
+      <pubDate>Fri, 27 Dec 2019 11:41:46 +0800</pubDate>
+      
+      <guid>https://zgdd.github.io/2019/002/</guid>
+      <description>源码下载 下载nginx包 wget https://nginx.org/download/nginx-1.13.1.tar.gz &amp;amp;&amp;amp; tar zxvf nginx-1.13.1.tar.gz 下载其他依赖库 wget https://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz &amp;amp;&amp;amp; tar xzvf pcre-8.40.tar.gz wget http://www.zlib.net/zlib-1.2.11.tar.gz &amp;amp;&amp;amp; tar xzvf zlib-1.2.11.tar.gz wget https://www.openssl.org/source/openssl-1.1.0f.tar.gz &amp;amp;&amp;amp; tar xzvf openssl-1.1.0f.tar.gz 开始安装 转到nginx目录 cd nginx-1.13.1/ 配置，编译和安装NGIN</description>
+    </item>
+    
+    <item>
+      <title>Jumpserver OAuth2</title>
+      <link>https://zgdd.github.io/2019/000/</link>
+      <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zgdd.github.io/2019/000/</guid>
+      <description>链接 改版Jumpserver 首先新建backup oidc_rp 文件结果如下： oidc_rp ├── __init__.py ├── backends.py ├── middleware.py ├── models.py ├── signals.py ├── urls.py └── views.py 下面是每个文件的具</description>
+    </item>
+    
+    <item>
+      <title>Linux应急响应流程</title>
+      <link>https://zgdd.github.io/2019/001/</link>
+      <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zgdd.github.io/2019/001/</guid>
+      <description>1. 检查账户 less /etc/passwd grep :0: /etc/passwd # 检查是否产生了新用户，和UID、GID是0的用户 ls -l /etc/passwd # 查看文件修改日期 awk -F: ‘$3= =0 {print $1}’ /etc/passwd # 查看是否存在特权用</description>
+    </item>
+    
+  </channel>
+</rss>

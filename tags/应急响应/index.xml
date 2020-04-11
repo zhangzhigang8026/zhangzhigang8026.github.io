@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>”应急响应&#34; on zgdd`s blog</title>
+    <link>https://zgdd.github.io/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/</link>
+    <description>Recent content in ”应急响应&#34; on zgdd`s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 25 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://zgdd.github.io/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux应急响应流程</title>
+      <link>https://zgdd.github.io/2019/001/</link>
+      <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zgdd.github.io/2019/001/</guid>
+      <description>1. 检查账户 less /etc/passwd grep :0: /etc/passwd # 检查是否产生了新用户，和UID、GID是0的用户 ls -l /etc/passwd # 查看文件修改日期 awk -F: ‘$3= =0 {print $1}’ /etc/passwd # 查看是否存在特权用</description>
+    </item>
+    
+  </channel>
+</rss>
